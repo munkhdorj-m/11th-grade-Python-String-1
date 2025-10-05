@@ -10,18 +10,12 @@ https://drive.google.com/file/d/1JE02xr12iIN_EY8-slrw2Wx0KqwH00pN/view?usp=shari
 
 **Problem:**
 
-Count the number of vowels in a given string.
+Input a string and print the number of characters in it.
 
 **Example:**
 
-	Input: "Hello World"  
-	Output: 3  
-	
-	Input: "Python Programming"  
-	Output: 4  
-	
-	Input: "BCDFG"  
-	Output: 0  
+	Input:  Hello world
+	Output: 11
 
 ---
 
@@ -29,18 +23,12 @@ Count the number of vowels in a given string.
 
 **Problem:**
 
-Check if a given string is a palindrome (reads the same forward and backward).
+Input a string and remove all spaces from it.
 
 **Example:**
 
-	Input: "madam"  
-	Output: True  
-	
-	Input: "racecar"  
-	Output: True  
-	
-	Input: "hello"  
-	Output: False  
+	Input:  Python is fun
+	Output: Pythonisfun
 
 ---
 
@@ -48,36 +36,50 @@ Check if a given string is a palindrome (reads the same forward and backward).
 
 **Problem:**
 
-Remove all spaces from a given string.
+Input a sentence and count the vowels.
 
 **Example**
 
-	Input: "Hello World"  
-	Output: "HelloWorld"  
-	
-	Input: "Python Programming Language"  
-	Output: "PythonProgrammingLanguage"  
-	
-	Input: "  Remove   spaces  "  
-	Output: "Removespaces"  
+	Input:  Python is amazing
+	Output: 5
 ---
 
 ## Exercise 4
 
 **Problem:**
 
-Count how often each word appears in a given string. Return dictionary that contains word and its count.
+Input a string and replace all vowels (a, e, i, o, u) with *.
 
 **Example**
 
-	Input: "hello hello world"  
-	Output:  {"hello": 2, "world": 1}
-	
-	Input: "this is a test this is"  
-	Output:  {"this": 2, "is": 2, "a": 1, "test": 1} 
-	
-	Input: "count count count"  
-	Output:  {"count": 3} 
+	Input:  Education
+	Output:  *d*c*t**n
+
+---
+## Exercise 5
+
+**Problem:**
+
+Input a sentence, use .split() to count and print how many words it has.
+
+**Example**
+
+	Input:  Python makes coding fun
+	Output: 4
+
+---
+
+
+## Exercise 6
+
+**Problem:**
+
+Input a sentence, split it into words, and print the longest one.
+
+**Example**
+
+	Input:  Learning Python programming
+	Output: programming
 
 
 ---
