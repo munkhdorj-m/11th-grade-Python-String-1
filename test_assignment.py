@@ -1,49 +1,92 @@
 import pytest
-import inspect
-from assignment import count_vowels, is_palindrome, remove_spaces, count_word_frequencies
+from assignment import (
+    count_characters,
+    remove_spaces,
+    count_vowels,
+    replace_vowels,
+    count_words,
+    find_longest_word,
+)
 
-def check_contains_loop(function):
-    source = inspect.getsource(function)
-    return 'for' in source or 'while' in source
+# --- Exercise 1: Count characters ---
+@pytest.mark.parametrize(
+    "text, expected",
+    [
+        ("Hello world", 11),
+        ("Python", 6),
+        ("", 0),
+        ("  spaced out  ", 13),
+    ]
+)
+def test1(text, expected):
+    assert count_characters(text) == expected
 
-@pytest.mark.parametrize("input, expected", [
-    ("Hello World", 3),
-    ("Python Programming", 4),
-    ("BCDFG", 0),
-    ("AEIOUaeiou", 10),
-    ("", 0)
-])
-def test1(input, expected):
-    assert count_vowels(input) == expected
-    assert check_contains_loop(count_vowels)
 
-@pytest.mark.parametrize("input, expected", [
-    ("madam", True),
-    ("racecar", True),
-    ("hello", False),
-    ("Aibohphobia", True),
-    ("", True)
-])
-def test2(input, expected):
-    assert is_palindrome(input) == expected
+# --- Exercise 2: Remove spaces ---
+@pytest.mark.parametrize(
+    "text, expected",
+    [
+        ("Python is fun", "Pythonisfun"),
+        ("   spaces   ", "spaces"),
+        ("no_space", "no_space"),
+        ("A B C D", "ABCD"),
+    ]
+)
+def test2(text, expected):
+    assert remove_spaces(text) == expected
 
-@pytest.mark.parametrize("input, expected", [
-    ("Hello World", "HelloWorld"),
-    ("Python Programming Language", "PythonProgrammingLanguage"),
-    ("  Remove   spaces  ", "Removespaces"),
-    ("", ""),
-    ("NoSpaces", "NoSpaces")
-])
-def test3(input, expected):
-    assert remove_spaces(input) == expected
 
-@pytest.mark.parametrize("input, expected", [
-    ("hello hello world", {"hello": 2, "world": 1}),
-    ("this is a test this is", {"this": 2, "is": 2, "a": 1, "test": 1}),
-    ("count count count", {"count": 3}),
-    ("", {}),
-    ("word", {"word": 1})
-])
-def test4(input, expected):
-    assert count_word_frequencies(input) == expected
-    assert check_contains_loop(count_word_frequencies)
+# --- Exercise 3: Count vowels ---
+@pytest.mark.parametrize(
+    "text, expected",
+    [
+        ("Python is amazing", 5),
+        ("HELLO WORLD", 3),
+        ("sky", 0),
+        ("aeiouAEIOU", 10),
+    ]
+)
+def test3(text, expected):
+    assert count_vowels(text) == expected
+
+
+# --- Exercise 4: Replace vowels ---
+@pytest.mark.parametrize(
+    "text, expected",
+    [
+        ("Education", "*d*c*t**n"),
+        ("HELLO", "H*LL*"),
+        ("sky", "sky"),
+        ("aeiou", "*****"),
+    ]
+)
+def test4(text, expected):
+    assert replace_vowels(text) == expected
+
+
+# --- Exercise 5: Count words ---
+@pytest.mark.parametrize(
+    "text, expected",
+    [
+        ("Python makes coding fun", 4),
+        ("One", 1),
+        ("", 0),
+        ("Two words", 2),
+    ]
+)
+def test5(text, expected):
+    assert count_words(text) == expected
+
+
+# --- Exercise 6: Find longest word ---
+@pytest.mark.parametrize(
+    "text, expected",
+    [
+        ("Learning Python programming", "programming"),
+        ("Short longest", "longest"),
+        ("equal size", "equal"),
+        ("", ""),
+    ]
+)
+def test6(text, expected):
+    assert find_longest_word(text) == expected
