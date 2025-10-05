@@ -15,7 +15,7 @@ from assignment import (
         ("Hello world", 11),
         ("Python", 6),
         ("", 0),
-        ("  spaced out  ", 13),
+        ("  spaced out  ", 14),
     ]
 )
 def test1(text, expected):
